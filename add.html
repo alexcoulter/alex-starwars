@@ -65,17 +65,18 @@
   <script type="text/javascript">
 $("#add-btn").on("click", (event) => {
   event.preventDefault();
+  console.log("add");
 
   const newCharacter = {
     name: $("#name").val().trim(),
     role: $("#role").val().trim(),
     age: $("#age").val().trim(),
-    forcePoints: $("#forcePoints").val().trim(),
+    forcePoints: $("#force-points").val().trim(),
   };
 
   $.post("/api/characters", newCharacter)
   .then((data) => {
-    alert(data.name + " added.");
+    alert(data.name + " added succcessfully!");
   });
 });
   </script>

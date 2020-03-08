@@ -55,6 +55,7 @@ app.get("/api/characters/:character", (req, res) => {
 
 app.post("/api/characters", (req, res) => {
   const newCharacter = req.body;
+  newCharacter.routeName = req.body.name.split(" ").join("").toLowerCase();
   console.log(newCharacter);
   characters.push(newCharacter);
   res.json(newCharacter);
